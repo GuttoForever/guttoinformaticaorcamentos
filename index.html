@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============ SEO ============ -->
+<title>Gutto Informática • Orçamentos PC Gamer 2026</title>
+<meta name="description" content="Três configurações de PC Gamer para 2026: Econômico, Custo-Benefício e Completo. Ryzen 7, 32 GB DDR4, RTX 3060 12 GB e SSD NVMe. Baixe em Excel ou PDF.">
+<meta name="author" content="Gutto Informática">
+<meta name="keywords" content="PC Gamer, orçamento, Ryzen 7, RTX 3060, 32GB, DDR4, 2026, Gutto Informática">
+
+<!-- ============ Open Graph (WhatsApp / Facebook) ============ -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gutto Informática • Orçamentos PC Gamer 2026">
+<meta property="og:description" content="Três configurações para diferentes faixas de investimento. Baixe em Excel ou PDF.">
+<meta property="og:locale" content="pt_BR">
+
+<!-- ============ Twitter Card ============ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gutto Informática • Orçamentos PC Gamer 2026">
+<meta name="twitter:description" content="Três configurações de PC Gamer com 32 GB de RAM. Baixe em Excel ou PDF.">
+
+<!-- ============ Favicon (emoji 🖥️) ============ -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
+
+<style>
+  :root {
+    --azul: #0b3d91;
+    --azul-claro: #1a5bc4;
+    --amarelo: #ffcc00;
+    --vermelho: #e63946;
+    --verde: #137333;
+    --cinza-bg: #f4f6f8;
+    --cinza-borda: #cfd8e3;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: Calibri, Arial, sans-serif;
+    background: var(--cinza-bg);
+    margin: 0;
+    padding: 20px;
+    color: #222;
+  }
+
+  /* ============ TOOLBAR ============ */
+  .toolbar {
+    position: sticky; top: 0; z-index: 10;
+    background: linear-gradient(135deg, var(--azul), var(--azul-claro));
+    color: #fff;
+    padding: 14px 20px;
+    border-radius: 10px;
+    display: flex; justify-content: space-between; align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+    flex-wrap: wrap; gap: 12px;
+  }
+  .toolbar h1 { font-size: 18px; margin: 0; letter-spacing: .3px; }
+  .toolbar .botoes { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  .toolbar button {
+    border: none; padding: 11px 20px; border-radius: 8px;
+    font-weight: bold; cursor: pointer; font-size: 14px;
+    transition: transform .15s, box-shadow .15s;
+  }
+  .toolbar button:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,.25); }
+  .btn-excel { background: var(--amarelo); color: var(--azul); }
+  .btn-pdf   { background: var(--vermelho); color: #fff; }
+  .btn-zap   { background: #25D366; color: #fff; }
+
+  /* ============ CARDS / ABAS ============ */
+  .sheet {
+    background: #fff; margin-top: 24px; padding: 22px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.08);
+    overflow-x: auto;
+  }
+  .sheet h2 {
+    color: var(--azul); margin-top: 0;
+    border-bottom: 3px solid var(--azul);
+    padding-bottom: 10px; font-size: 20px;
+  }
+
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  th, td { border: 1px solid var(--cinza-borda); padding: 9px 11px; text-align: left; vertical-align: top; }
+  th { background: var(--azul); color: #fff; }
+  tr:nth-child(even) td { background: #f9fbfd; }
+  .total { background: #fff3cd !important; font-weight: bold; }
+  .nota { font-size: 12px; color: #555; margin-top: 12px; font-style: italic; }
+  a { color: var(--azul); text-decoration: none; word-break: break-all; }
+  a:hover { text-decoration: underline; }
+  .badge {
+    display: inline-block; background: #e6f4ea; color: var(--verde);
+    font-size: 11px; padding: 2px 7px; border-radius: 5px; margin-left: 4px;
+    font-weight: bold;
+  }
+
+  footer {
+    text-align: center; padding: 24px 0; color: #777; font-size: 13px;
+  }
+  footer a { color: var(--azul); }
+
+  /* ============ RESPONSIVO ============ */
+  @media (max-width: 720px) {
+    body { padding: 10px; }
+    .toolbar { padding: 12px; }
+    .toolbar h1 { font-size: 15px; }
+    .toolbar button { padding: 9px 14px; font-size: 12px; }
+    .sheet { padding: 14px; }
+    table { font-size: 11px; }
+    th, td { padding: 6px 7px; }
+  }
+
+  /* ============ IMPRESSÃO / PDF ============ */
+  @media print {
+    body { background: #fff; padding: 0; margin: 0; font-size: 11px; }
+    .toolbar, footer, .btn-print-hide { display: none !important; }
+    .sheet {
+      box-shadow: none; border-radius: 0; margin: 0;
+      padding: 12px; page-break-after: always; overflow: visible;
+    }
+    .sheet:last-of-type { page-break-after: auto; }
+    .sheet h2 { font-size: 16px; }
+    table { font-size: 10px; }
+    th, td { padding: 5px 6px; }
+    a { color: #000; text-decoration: none; }
+    .nota { font-size: 10px; }
+  }
+  @page { size: A4 landscape; margin: 10mm; }
+</style>
+</head>
+<body>
+
+<!-- ===================== TOOLBAR ===================== -->
+<div class="toolbar btn-print-hide">
+  <h1>🖥️ GUTTO INFORMÁTICA • Orçamentos PC Gamer 2026</h1>
+  <div class="botoes">
+    <button class="btn-excel" onclick="baixarExcel()">⬇ Excel (.xls)</button>
+    <button class="btn-pdf"   onclick="baixarPDF()">🖨 PDF</button>
+    <button class="btn-zap"   onclick="compartilharZap()">💬 WhatsApp</button>
+  </div>
+</div>
+
+<!-- ===================== CAPA ===================== -->
+<section class="sheet" id="capa">
+  <h2>Capa</h2>
+  <table>
+    <tr><td colspan="3"><strong>GUTTO INFORMÁTICA</strong></td></tr>
+    <tr><td colspan="3">&nbsp;</td></tr>
+    <tr><td colspan="3"><strong>ORÇAMENTOS DE PC GAMER • 2026</strong></td></tr>
+    <tr><td colspan="3">&nbsp;</td></tr>
+    <tr><td colspan="3">Três configurações para diferentes faixas de investimento, mantendo foco em jogos em Full HD e agora com 32 GB de RAM. Todos os links são referências de lojas consultadas. Os valores podem mudar conforme estoque, vendedor, promoções e frete.</td></tr>
+    <tr><td colspan="3">&nbsp;</td></tr>
+    <tr>
+      <td><strong>01 • ECONÔMICO</strong><br>≈ R$ 5,9 mil</td>
+      <td><strong>02 • CUSTO-BENEFÍCIO</strong><br>≈ R$ 6,1 mil</td>
+      <td><strong>03 • COMPLETO</strong><br>≈ R$ 7,7 mil</td>
+    </tr>
+    <tr><td colspan="3">&nbsp;</td></tr>
+    <tr><td colspan="3">Base das configurações: Ryzen 7, 32 GB DDR4, RTX 3060 12 GB, SSD NVMe e monitor. A opção econômica utiliza cortes em componentes que afetam pouco o FPS, como capacidade do SSD e categoria do monitor. A opção completa prioriza armazenamento, placa-mãe, fonte e monitor.</td></tr>
+    <tr><td colspan="3">&nbsp;</td></tr>
+    <tr><td colspan="3">Cotação de referência — 26/09/2026 • Frete não incluído • Preços sujeitos a alteração</td></tr>
+  </table>
+</section>
+
+<!-- ===================== 01 ECONÔMICO ===================== -->
+<section class="sheet" id="eco">
+  <h2>01 Econômico</h2>
+  <table>
+    <thead><tr><th>Componente</th><th>Configuração</th><th>Loja</th><th>Preço ref.</th><th>Link</th><th>Observação</th></tr></thead>
+    <tbody>
+      <tr><td>Processador</td><td>AMD Ryzen 7 5700X</td><td>Mercado Livre / KaBuM</td><td>1150.00</td><td><a href="https://lista.mercadolivre.com.br/ryzen-7-5700x">lista.mercadolivre.com.br/ryzen-7-5700x</a></td><td>Conferir estoque/frete.</td></tr>
+      <tr><td>Placa-mãe</td><td>B550M (ASUS TUF / Gigabyte)</td><td>KaBuM / Pichau</td><td>649.00</td><td><a href="https://www.kabum.com.br/hardware/placas-mae">kabum.com.br/hardware/placas-mae</a></td><td>Conferir estoque/frete.</td></tr>
+      <tr><td>Placa de vídeo</td><td>RTX 3060 12 GB</td><td>Pichau / Mercado Livre</td><td>1800.00</td><td><a href="https://www.pichau.com.br/search?q=rtx%203060%2012gb">pichau.com.br/search?q=rtx 3060 12gb</a></td><td>Conferir estoque/frete.</td></tr>
+      <tr><td>Memória RAM <span class="badge">32 GB</span></td><td>32 GB DDR4 3200 MHz (2x16 GB)</td><td>Pichau</td><td>520.00</td><td><a href="https://www.pichau.com.br/search?q=32gb%20ddr4%203200">pichau.com.br/search?q=32gb ddr4 3200</a></td><td>Conferir estoque/frete.</td></tr>
+      <tr><td>SSD <span class="badge">1 TB</span></td><td>NVMe 1 TB</td><td>Pichau</td><td>550.00</td><td><a href="https://www.pichau.com.br/search?q=ssd%201tb%20nvme">pichau.com.br/search?q=ssd 1tb nvme</a></td><td>Conferir estoque/frete.</td></tr>
+      <tr><td>Fonte</td><td>MSI MAG A750BN 750 W 80 Plus Bronze</td><td>KaBuM</td><td>399.99</td><td><a href="https://www.kabum.com.br/produto/369658/fonte-msi-mag-a650bn-650w-80-plus-bronze-pfc-ativo-com-cabo-preto-306-7zp2b22-ce0">kabum.com.br/produto/369658</a></td><td>Conferir estoque/frete.</td></tr>
+      <tr><td>Gabinete</td><td>Mid Tower com boa ventilação</td><td>Pichau</td><td>220.00</td><td><a href="https://www.pichau.com.br/search?q=gabinete%20gamer">pichau.com.br/search?q=gabinete gamer</a></td><td>Conferir estoque/frete.</td></tr>
+      <tr><td>Monitor</td><td>24" Full HD 100 Hz IPS</td><td>KaBuM</td><td>549.00</td><td><a href="https://www.kabum.com.br/produto/694762/monitor-gamer-aoc-24-100hz-fhd-1ms-widescreen-va-hdmi-24b35hm2">kabum.com.br/produto/694762</a></td><td>Conferir estoque/frete.</td></tr>
+      <tr><td>Teclado + mouse</td><td>Kit gamer básico</td><td>Mercado Livre</td><td>120.00</td><td><a href="https://lista.mercadolivre.com.br/kit-teclado-mouse-gamer">lista.mercadolivre.com.br/kit-teclado-mouse-gamer</a></td><td>Conferir estoque/frete.</td></tr>
+      <tr class="total"><td colspan="3">TOTAL ESTIMADO</td><td>5957.99</td><td colspan="2">Soma dos itens</td></tr>
+    </tbody>
+  </table>
+  <p class="nota">IMPORTANTE: valores são estimativas de mercado e podem variar por estoque, vendedor, cupom e frete.</p>
+</section>
+
+<!-- ===================== 02 CUSTO-BENEFÍCIO ===================== -->
+<section class="sheet" id="cb">
+  <h2>02 Custo-Benefício</h2>
+  <table>
+    <thead><tr><th>Componente</th><th>Configuração</th><th>Loja</th><th>Preço ref.</th><th>Link</th><th>Observação</th></tr></thead>
+    <tbody>
+      <tr><td>Processador + placa-mãe</td><td>Ryzen 7 5700X + B550M Aorus Elite</td><td>Pichau</td><td>1809.98</td><td><a href="https://www.pichau.com.br/pichau-kit-upgrade-amd-ryzen-7-5700x-b550-aorus-elite-ddr4">pichau.com.br/kit-upgrade-amd-ryzen-7-5700x-b550-aorus-elite</a></td><td>Conferir estoque/frete.</td></tr>
+      <tr><td>Placa de vídeo</td><td>RTX 3060 12 GB (modelo OC/TUF)</td><td>Pichau</td><td>1950.00</td><td><a href="https://www.pichau.com.br/search?q=rtx%203060%2012gb">pichau.com.br/search?q=rtx 3060 12gb</a></td><td>Conferir estoque/frete.</td></tr>
+      <tr><td>Memória RAM <span class="badge">32 GB</span></td><td>32 GB DDR4 3200 MHz (2x16 GB)</td><td>Pichau</td><td>520.00</td><td><a href="https://www.pichau.com.br/search?q=32gb%20ddr4%203200">pichau.com.br/search?q=32gb ddr4 3200</a></td><td>Conferir estoque/frete.</td></tr>
+      <tr><td>SSD <span class="badge">1 TB</span></td><td>NVMe 1 TB</td><td>Pichau</td><td>550.00</td><td><a href="https://www.pichau.com.br/search?q=ssd%201tb%20nvme">pichau.com.br/search?q=ssd 1tb nvme</a></td><td>Conferir estoque/frete.</td></tr>
+      <tr><td>Fonte</td><td>MSI MAG A750BN 750 W 80 Plus Bronze</td><td>KaBuM</td><td>399.99</td><td><a href="https://www.kabum.com.br/produto/369658/fonte-msi-mag-a650bn-650w-80-plus-bronze-pfc-ativo-com-cabo-preto-306-7zp2b22-ce0">kabum.com.br/produto/369658</a></td><td>Conferir estoque/frete.</td></tr>
+      <tr><td>Gabinete</td><td>Mid Tower com 3 fans</td><td>Pichau</td><td>250.00</td><td><a href="https://www.pichau.com.br/search?q=gabinete%20gamer%203%20fans">pichau.com.br/search?q=gabinete gamer 3 fans</a></td><td>Conferir estoque/frete.</td></tr>
+      <tr><td>Monitor</td><td>24" Full HD 100 Hz IPS</td><td>KaBuM</td><td>549.00</td><td><a href="https://www.kabum.com.br/produto/694762/monitor-gamer-aoc-24-100hz-fhd-1ms-widescreen-va-hdmi-24b35hm2">kabum.com.br/produto/694762</a></td><td>Conferir estoque/frete.</td></tr>
+      <tr><td>Teclado + mouse</td><td>Kit gamer básico</td><td>Mercado Livre</td><td>120.00</td><td><a href="https://lista.mercadolivre.com.br/kit-teclado-mouse-gamer">lista.mercadolivre.com.br/kit-teclado-mouse-gamer</a></td><td>Conferir estoque/frete.</td></tr>
+      <tr class="total"><td colspan="3">TOTAL ESTIMADO</td><td>6148.97</td><td colspan="2">Soma dos itens</td></tr>
+    </tbody>
+  </table>
+  <p class="nota">IMPORTANTE: valores são estimativas de mercado e podem variar por estoque, vendedor, cupom e frete.</p>
+</section>
+
+<!-- ===================== 03 COMPLETO ===================== -->
+<section class="sheet" id="comp">
+  <h2>03 Completo</h2>
+  <table>
+    <thead><tr><th>Componente</th><th>Configuração</th><th>Loja</th><th>Preço ref.</th><th>Link</th><th>Observação</th></tr></thead>
+    <tbody>
+      <tr><td>Processador</td><td>AMD Ryzen 7 5700X</td><td>KaBuM</td><td>1199.99</td><td><a href="https://www.kabum.com.br/hardware/processadores">kabum.com.br/hardware/processadores</a></td><td>Conferir estoque/frete.</td></tr>
+      <tr><td>Placa-mãe</td><td>B550M (ASUS TUF Gaming / Gigabyte Aorus)</td><td>Pichau</td><td>750.00</td><td><a href="https://www.pichau.com.br/search?q=b550m">pichau.com.br/search?q=b550m</a></td><td>Conferir estoque/frete.</td></tr>
+      <tr><td>Placa de vídeo</td><td>RTX 3060 12 GB (OC triple-fan)</td><td>Pichau</td><td>2100.00</td><td><a href="https://www.pichau.com.br/search?q=rtx%203060%2012gb">pichau.com.br/search?q=rtx 3060 12gb</a></td><td>Conferir estoque/frete.</td></tr>
+      <tr><td>Memória RAM <span class="badge">32 GB</span></td><td>32 GB DDR4 3200 MHz (2x16 GB)</td><td>Pichau</td><td>520.00</td><td><a href="https://www.pichau.com.br/search?q=32gb%20ddr4%203200">pichau.com.br/search?q=32gb ddr4 3200</a></td><td>Conferir estoque/frete.</td></tr>
+      <tr><td>SSD <span class="badge">2 TB</span></td><td>NVMe 2 TB</td><td>Mercado Livre</td><td>950.00</td><td><a href="https://lista.mercadolivre.com.br/ssd-nvme-2tb">lista.mercadolivre.com.br/ssd-nvme-2tb</a></td><td>Conferir estoque/frete.</td></tr>
+      <tr><td>Fonte</td><td>MSI MAG A850GL 850 W 80 Plus Gold</td><td>KaBuM</td><td>599.99</td><td><a href="https://www.kabum.com.br/produto/369658/fonte-msi-mag-a650bn-650w-80-plus-bronze-pfc-ativo-com-cabo-preto-306-7zp2b22-ce0">kabum.com.br/produto/369658</a></td><td>Conferir estoque/frete.</td></tr>
+      <tr><td>Gabinete</td><td>Mid Tower airflow + 4 fans</td><td>Pichau</td><td>350.00</td><td><a href="https://www.pichau.com.br/search?q=gabinete%20airflow%204%20fans">pichau.com.br/search?q=gabinete airflow 4 fans</a></td><td>Conferir estoque/frete.</td></tr>
+      <tr><td>Monitor</td><td>27" IPS Full HD 165 Hz</td><td>WebContinental / parceiros</td><td>1100.00</td><td><a href="https://www.kabum.com.br/search?query=monitor%2027%20165hz">kabum.com.br/search?query=monitor 27 165hz</a></td><td>Conferir estoque/frete.</td></tr>
+      <tr><td>Teclado + mouse</td><td>Kit gamer</td><td>Mercado Livre</td><td>150.00</td><td><a href="https://lista.mercadolivre.com.br/kit-teclado-mouse-gamer">lista.mercadolivre.com.br/kit-teclado-mouse-gamer</a></td><td>Conferir estoque/frete.</td></tr>
+      <tr class="total"><td colspan="3">TOTAL ESTIMADO</td><td>7719.98</td><td colspan="2">Soma dos itens</td></tr>
+    </tbody>
+  </table>
+  <p class="nota">IMPORTANTE: valores são estimativas de mercado e podem variar por estoque, vendedor, cupom e frete.</p>
+</section>
+
+<!-- ===================== COMPARATIVO ===================== -->
+<section class="sheet" id="comp2">
+  <h2>Comparativo</h2>
+  <table>
+    <thead><tr><th>Plano</th><th>Perfil</th><th>Principais componentes</th><th>Total estimado</th><th>Destaque</th></tr></thead>
+    <tbody>
+      <tr><td>01 Econômico</td><td>Entrada / Full HD</td><td>Ryzen 7 5700X + B550M + RTX 3060 12GB + 32GB + NVMe 1TB + monitor 24" 100Hz</td><td>5957.99</td><td>Menor investimento</td></tr>
+      <tr><td>02 Custo-Benefício</td><td>Recomendado para jogar</td><td>Ryzen 7 5700X + B550M Aorus + RTX 3060 12GB OC + 32GB + NVMe 1TB + monitor 24" 100Hz</td><td>6148.97</td><td>Equilíbrio</td></tr>
+      <tr><td>03 Completo</td><td>Setup mais confortável</td><td>Ryzen 7 5700X + B550M TUF + RTX 3060 12GB OC + 32GB + NVMe 2TB + monitor 27" 165Hz</td><td>7719.98</td><td>Mais espaço e tela</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ===================== FONTES ===================== -->
+<section class="sheet" id="fontes">
+  <h2>Fontes consultadas</h2>
+  <table>
+    <thead><tr><th>Item</th><th>Loja</th><th>Preço observado</th><th>Fonte</th></tr></thead>
+    <tbody>
+      <tr><td>Ryzen 7 5700X</td><td>KaBuM</td><td>1199.99</td><td><a href="https://www.kabum.com.br/hardware/processadores">kabum.com.br/hardware/processadores</a></td></tr>
+      <tr><td>Kit Ryzen 7 5700X + B550M</td><td>Pichau</td><td>1809.98</td><td><a href="https://www.pichau.com.br/pichau-kit-upgrade-amd-ryzen-7-5700x-b550-aorus-elite-ddr4">pichau.com.br/kit-upgrade-ryzen-7-5700x-b550</a></td></tr>
+      <tr><td>Fonte MSI MAG A650BN 650W Bronze</td><td>KaBuM</td><td>289.99</td><td><a href="https://www.kabum.com.br/produto/369658">kabum.com.br/produto/369658</a></td></tr>
+      <tr><td>Monitor AOC 24" 100Hz</td><td>KaBuM</td><td>549.00</td><td><a href="https://www.kabum.com.br/produto/694762">kabum.com.br/produto/694762</a></td></tr>
+      <tr><td>Monitor Rise Mode 24" IPS 100Hz</td><td>KaBuM</td><td>449.99</td><td><a href="https://www.kabum.com.br/produto/881066">kabum.com.br/produto/881066</a></td></tr>
+      <tr><td>PC Ryzen 7 5700X + RTX 3060 8GB + 16GB + 480GB</td><td>Pichau</td><td>5299.92</td><td><a href="https://www.pichau.com.br/pc-gamer-pichau-amd-ryzen-7-5700x-geforce-rtx-3060-8gb-16gb-ddr4-ssd-480gb-67650">pichau.com.br/pc-gamer-pichau-ryzen-7-rtx-3060</a></td></tr>
+      <tr><td>PC Ryzen 7 5700X + RTX 3060 12GB + 16GB + 1TB</td><td>Mercado Livre / BluePC</td><td>7619.00</td><td><a href="https://lista.mercadolivre.com.br/cpu-gamer-3060">lista.mercadolivre.com.br/cpu-gamer-3060</a></td></tr>
+    </tbody>
+  </table>
+  <p class="nota">Observação: alguns valores usados nos três orçamentos são estimativas de mercado. A fonte deve ser reaberta antes da compra.</p>
+</section>
+
+<footer class="btn-print-hide">
+  © 2026 Gutto Informática • Orçamentos PC Gamer • 
+  <a href="https://github.com/" target="_blank" rel="noopener">Publicado no GitHub Pages</a>
+</footer>
+
+<script>
+/* ============ BAIXAR EXCEL ============ */
+function baixarExcel() {
+  const abas = [
+    { nome: "Capa", id: "capa" },
+    { nome: "01 Econômico", id: "eco" },
+    { nome: "02 Custo-Benefício", id: "cb" },
+    { nome: "03 Completo", id: "comp" },
+    { nome: "Comparativo", id: "comp2" },
+    { nome: "Fontes consultadas", id: "fontes" }
+  ];
+
+  let xml = `<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">
+<Styles>
+  <Style ss:ID="header"><Font ss:Bold="1" ss:Color="#FFFFFF"/><Interior ss:Color="#0B3D91" ss:Pattern="Solid"/></Style>
+  <Style ss:ID="total"><Font ss:Bold="1"/><Interior ss:Color="#FFF3CD" ss:Pattern="Solid"/></Style>
+  <Style ss:ID="titulo"><Font ss:Bold="1" ss:Size="14" ss:Color="#0B3D91"/></Style>
+</Styles>`;
+
+  abas.forEach(aba => {
+    const container = document.getElementById(aba.id);
+    xml += `<Worksheet ss:Name="${aba.nome}"><Table>`;
+    const h2 = container.querySelector("h2");
+    if (h2) {
+      xml += `<Row><Cell ss:StyleID="titulo"><Data ss:Type="String">${escapeXml(h2.textContent)}</Data></Cell></Row><Row></Row>`;
+    }
+    container.querySelectorAll("table").forEach(tabela => {
+      tabela.querySelectorAll("tr").forEach(tr => {
+        xml += "<Row>";
+        tr.querySelectorAll("th, td").forEach(celula => {
+          const isHeader = celula.tagName.toLowerCase() === "th";
+          const isTotal = celula.closest("tr").classList.contains("total");
+          const texto = celula.innerText.replace(/\s+/g, " ").trim();
+          const style = isHeader ? ' ss:StyleID="header"' : (isTotal ? ' ss:StyleID="total"' : "");
+          xml += `<Cell${style}><Data ss:Type="String">${escapeXml(texto)}</Data></Cell>`;
+        });
+        xml += "</Row>";
+      });
+    });
+    xml += `</Table></Worksheet>`;
+  });
+
+  xml += `</Workbook>`;
+
+  const blob = new Blob([xml], { type: "application/vnd.ms-excel;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "Gutto_Informatica_Orcamentos_PC_Gamer_2026.xls";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+/* ============ BAIXAR PDF ============ */
+function baixarPDF() {
+  window.print(); // usuário escolhe "Salvar como PDF"
+}
+
+/* ============ COMPARTILHAR WHATSAPP ============ */
+function compartilharZap() {
+  const url = encodeURIComponent(window.location.href);
+  const texto = encodeURIComponent(
+    "🖥️ *Gutto Informática — Orçamentos PC Gamer 2026*\n\n" +
+    "Três configurações com Ryzen 7, 32 GB DDR4, RTX 3060 12 GB e SSD NVMe.\n\n" +
+    "Veja os detalhes e baixe em Excel ou PDF:"
+  );
+  window.open(`https://wa.me/?text=${texto}%20${url}`, "_blank");
+}
+
+/* ============ UTIL ============ */
+function escapeXml(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
+</script>
+
+</body>
+</html>
