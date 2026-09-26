@@ -19,7 +19,7 @@ Página web com três configurações de PC Gamer para 2026:
 
 ## 🌐 Acesse online
 
-👉 [https://SEU-USUARIO.github.io/gutto-orcamentos/](https://SEU-USUARIO.github.io/gutto-orcamentos/)
+👉 [https://guttoforever.github.io/gutto-orcamentos/](https://SEU-USUARIO.github.io/gutto-orcamentos/)
 
 ## 📦 Como publicar (GitHub Pages)
 
