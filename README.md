@@ -19,14 +19,14 @@ Página web com três configurações de PC Gamer para 2026:
 
 ## 🌐 Acesse online
 
-👉 [https://guttoforever.github.io/gutto-orcamentos/](https://SEU-USUARIO.github.io/gutto-orcamentos/)
+👉 [https://guttoforever.github.io/gutto-orcamentos/](https://guttoforever.github.io/gutto-orcamentos/)
 
 ## 📦 Como publicar (GitHub Pages)
 
 1. Crie um repositório público chamado `gutto-orcamentos`
 2. Envie o arquivo `index.html`
 3. Vá em **Settings → Pages → Source: main / root → Save**
-4. Acesse `https://SEU-USUARIO.github.io/gutto-orcamentos/`
+4. Acesse `https://guttoforever.github.io/gutto-orcamentos/`
 
 ## ⚠️ Aviso
 
